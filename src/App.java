@@ -13,6 +13,7 @@ public class App {
         toReverse.push(2);
         toReverse.push(3);
         toReverse.push(4);
+        toReverse.push(5);
         System.out.println(ReverseStack.reverseHalf(toReverse));
     }
 }
