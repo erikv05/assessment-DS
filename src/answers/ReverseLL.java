@@ -4,7 +4,7 @@ import helpers.Node;
 
 public class ReverseLL {
     
-    public static Node Reverse(Node head) {
+    public static Node reverse(Node head) {
         if (head == null || head.next == null) {
             return head;
         }

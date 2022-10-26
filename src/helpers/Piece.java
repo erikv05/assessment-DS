@@ -13,6 +13,14 @@ public class Piece {
 
     }
 
+    public void setEmpty() {
+        this.typeOfPiece = pieces.EMPTY;
+    }
+
+    public void setQueen() {
+        this.typeOfPiece = pieces.QUEEN;
+    }
+
     public boolean isEmpty() {
         return typeOfPiece == pieces.EMPTY;
     }

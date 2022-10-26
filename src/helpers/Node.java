@@ -23,4 +23,22 @@ public class Node {
         }
     }
 
+    @Override
+    public boolean equals(Object node) {
+
+        Node cur = this;
+
+        while (cur != null && node != null) {
+            if (cur.data != ((Node) node).data) {
+                return false;
+            }
+            cur = cur.next;
+            node = ((Node) node).next;
+        }
+        if (cur == null ^ node == null) {
+            return false;
+        }
+        return true;
+    }
+
 }

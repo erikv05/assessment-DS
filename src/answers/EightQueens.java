@@ -12,9 +12,9 @@ public class EightQueens {
         } else {
             for (int col = 0; col < Chess.chessBoard.length; col++) {
                 if (!Chess.isInCheckAbove(row, col)) {
-                    Chess.chessBoard[row][col].typeOfPiece = Piece.pieces.QUEEN;
+                    Chess.chessBoard[row][col].setQueen();
                     solveEightQueensProblemHelper(row + 1);
-                    Chess.chessBoard[row][col].typeOfPiece = Piece.pieces.EMPTY;
+                    Chess.chessBoard[row][col].setEmpty();
                 }
             }
         }
