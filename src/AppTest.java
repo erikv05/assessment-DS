@@ -1,4 +1,4 @@
-import answers.*;
+import questions.*;
 import helpers.*;
 
 import static org.junit.Assert.assertEquals;
@@ -20,12 +20,12 @@ public class AppTest {
     @Test
     public void testReverseLL() {
         Node front = null;
-        assertEquals(front, ReverseLL.reverse(front));
+        assertEquals(ReverseLL.reverse(front), front);
         front = new Node(3, new Node(4, new Node(5)));
         Node reverseExpected = new Node(5, new Node(4, new Node(3)));
-        assertEquals(ReverseLL.reverse(front), reverseExpected);
+        assertEquals(reverseExpected, ReverseLL.reverse(front));
         front.next = null; front.data = 3;
-        assertEquals(ReverseLL.reverse(front), new Node(3));
+        assertEquals(new Node(3), ReverseLL.reverse(front));
     }
 
     @Test
@@ -33,11 +33,11 @@ public class AppTest {
 
         Stack<Integer> stack = new Stack<Integer>();
         Stack<Integer> expected = new Stack<Integer>();
-        assertEquals(stack, expected);
+        assertEquals(expected, stack);
         stack.push(3);
         stack.push(4);
         stack.push(5);
-        assertEquals(ReverseStack.reverseHalf(stack), stack);
+        assertEquals(stack, ReverseStack.reverseHalf(stack));
         stack.push(6);
         stack.push(7);
         expected.push(3);
@@ -45,7 +45,7 @@ public class AppTest {
         expected.push(5);
         expected.push(7);
         expected.push(6);
-        assertEquals(ReverseStack.reverseHalf(stack), expected);
+        assertEquals(expected, ReverseStack.reverseHalf(stack));
 
     }
 
@@ -57,8 +57,8 @@ public class AppTest {
         Set<Integer> two = new HashSet<Integer>();
         Set<Integer> expectSet = new HashSet<Integer>();
 
-        assertEquals(SetMethods.intersect(one, two), expectSet);
-        assertEquals(SetMethods.difference(one, two), expectSet);
+        assertEquals(expectSet, SetMethods.intersect(one, two));
+        assertEquals(expectSet, SetMethods.difference(one, two));
 
 
         one.add(1);
@@ -70,7 +70,7 @@ public class AppTest {
 
         expectSet.add(3);
 
-        assertEquals(SetMethods.intersect(one, two), expectSet);
+        assertEquals(expectSet, SetMethods.intersect(one, two));
 
         expectSet.remove(3);
         expectSet.add(1);
@@ -78,7 +78,7 @@ public class AppTest {
         expectSet.add(4);
         expectSet.add(5);
 
-        assertEquals(SetMethods.difference(one, two), expectSet);
+        assertEquals(expectSet, SetMethods.difference(one, two));
 
     }
 
